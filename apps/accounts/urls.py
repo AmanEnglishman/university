@@ -1,4 +1,7 @@
 from django.urls import path
-from .views import index
+from .views import register, index
 
-url
+urlpatterns = [
+    path('', index),
+    path('register', register)
+]
