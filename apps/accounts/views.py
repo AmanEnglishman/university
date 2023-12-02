@@ -17,5 +17,9 @@ def register(request):
     return redirect(request, 'accounts/register.html', {'form': form})
 
 
+def login(request):
+    return render(request, 'accounts/login.html')
+
+
 def index(request):
     return render(request, 'index.html')
