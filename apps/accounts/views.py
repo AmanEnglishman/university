@@ -12,9 +12,11 @@ def register(request):
             username = form.cleaned_data.get('username')
             messages.success(request, f'Wellcome {username}')
             return redirect('login')
+        else:
+            print(form.errors)
     else:
         form = UserRegisterForm()
-    return redirect(request, 'accounts/register.html', {'form': form})
+    return render(request, 'accounts/register.html', {'form': form})
 
 
 def login(request):
